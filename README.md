@@ -1,7 +1,6 @@
-ALGEO02-21010
-# Project Name
+# Application of Eigen Values ​​and EigenFace on Face Recognition
 > Outline a brief description of your project.
-> Live demo [_here_](https://www.example.com). <!-- If you have the project hosted somewhere, include the link here. -->
+> Live demo [_here_](https://www.youtube.com). <!-- If you have the project hosted somewhere, include the link here. -->
 
 ## Table of Contents
 * [General Info](#general-information)
@@ -18,7 +17,7 @@ ALGEO02-21010
 
 
 ## General Information
-- Provide general information about your project here.
+Application of Eigen and EigenFace Values ​​in Face Recognition is a project of the IF2123 / Linear Algebra and Geometry course.
 - What problem does it (intend to) solve?
 - What is the purpose of your project?
 - Why did you undertake it?
@@ -26,9 +25,7 @@ ALGEO02-21010
 
 
 ## Technologies Used
-- Tech 1 - version 1.0
-- Tech 2 - version 2.0
-- Tech 3 - version 3.0
+- Python
 
 
 ## Features
@@ -57,7 +54,7 @@ Provide various use cases and code examples here.
 
 
 ## Project Status
-Project is: _in progress_ / _complete_ / _no longer being worked on_. If you are no longer working on it, provide reasons why.
+Project is: _complete_
 
 
 ## Room for Improvement
@@ -80,7 +77,11 @@ Give credit here.
 
 
 ## Contact
-Created by [@flynerdpl](https://www.flynerd.pl/) - feel free to contact me!
+Created by :
+[Muhamad Salman Hakim Alfarisi (13521010)](https://www.flynerd.pl/)
+[Haikal Ardzi Shofiyyurrohman (13521012)](https://www.flynerd.pl/)
+[Agsha Athalla Nurkareem (13521027)](https://www.flynerd.pl/)
+- feel free to contact us!
 
 
 <!-- Optional -->
