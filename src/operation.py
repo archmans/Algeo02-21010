@@ -18,3 +18,7 @@ def KurangMatriks (matriksGambar1, matriksGambar2):
 def KaliMatriks (matriksGambar1, matriksGambar2):
     matrikshasil = np.dot(matriksGambar1, matriksGambar2)
     return matrikshasil
+
+def TransposeMatriks (matriksGambar):
+    matrikshasil = np.transpose(matriksGambar)
+    return matrikshasil
