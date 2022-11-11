@@ -29,7 +29,11 @@ def printMatriks (matriksGambar):
             print(matriksGambar[i][j], end=" ")
         print()
 
-#Driver
+def concat(matriksGambar1, matriksGambar2):
+    matrikshasil = np.concatenate((matriksGambar1, matriksGambar2), axis=1)
+    return matrikshasil
+
+# Driver
 # satu = [[0 for i in range(3)] for j in range(3)]
 # dua = [[0 for i in range(3)] for j in range(3)]
 
@@ -50,3 +54,5 @@ def printMatriks (matriksGambar):
 # printMatriks(KaliMatriks(satu, dua))
 # print("\ntranspose")
 # printMatriks(TransposeMatriks(satu))
+# a = concat(satu, dua)
+# printMatriks(a)
