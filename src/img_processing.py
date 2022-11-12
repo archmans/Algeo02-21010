@@ -26,5 +26,6 @@ def resize_image(images, size):
 
 
 #S = resize_image(get_image(".\dataset\pins_Adriana Lima"), (256, 256))
-S = resize_image(get_image("./test/dataset/pins_Adriana Lima"), (256, 256))
+S = resize_image(get_image("./test/dataset/AA"), (256, 256))
 printMatriks(S)
+print(S)

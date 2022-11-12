@@ -27,7 +27,7 @@ def printMatriks (matriksGambar):
     for i in range(len(matriksGambar)):
         for j in range(len(matriksGambar[0])):
             print(matriksGambar[i][j], end=" ")
-        print()
+        print("")
 
 def concat(matriksGambar1, matriksGambar2):
     matrikshasil = np.concatenate((matriksGambar1, matriksGambar2), axis=1)
