@@ -1,12 +1,8 @@
 from operation import *
 import numpy as np
-from img_processing import *
 
 def Mean (listMatriksGambar):
-    matriksHasil = np.zeros((len(listMatriksGambar[0]), len(listMatriksGambar[0][0])))
-    for i in range(len(listMatriksGambar)):
-        matriksHasil = JumlahMatriks(matriksHasil, listMatriksGambar[i])
-    matriksHasil = KaliMatriks(matriksHasil, (1/len(listMatriksGambar)))
+    matriksHasil = np.mean(listMatriksGambar, axis=0).astype(int)
     return matriksHasil
 
 # t = resize_image(get_image("./test/wow"), (256, 256))

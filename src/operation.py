@@ -4,16 +4,10 @@ import cv2
 # matriks[0] kolom
 
 def JumlahMatriks (matriksGambar1, matriksGambar2):
-    for i in range(len(matriksGambar1)):
-        for j in range(len(matriksGambar1[0])):
-            matriksGambar1[i][j] += matriksGambar2[i][j]
-    return matriksGambar1
+    return np.add(matriksGambar1, matriksGambar2)
 
 def KurangMatriks (matriksGambar1, matriksGambar2):
-    for i in range(len(matriksGambar1)):
-        for j in range(len(matriksGambar1[0])):
-            matriksGambar1[i][j] -= matriksGambar2[i][j]
-    return matriksGambar1
+    return np.subtract(matriksGambar1, matriksGambar2)
 
 def KaliMatriks (matriksGambar1, matriksGambar2):
     matrikshasil = np.dot(matriksGambar1, matriksGambar2)
@@ -34,13 +28,13 @@ def concat(matriksGambar1, matriksGambar2):
     return matrikshasil
 
 # Driver
-# satu = [[0 for i in range(3)] for j in range(3)]
-# dua = [[0 for i in range(3)] for j in range(3)]
+satu = [[0 for i in range(3)] for j in range(3)]
+dua = [[0 for i in range(3)] for j in range(3)]
 
-# for i in range(3):
-#     for j in range(3):
-#         satu[i][j] = i+j
-#         dua[i][j] = i-j
+for i in range(3):
+    for j in range(3):
+        satu[i][j] = i+j
+        dua[i][j] = i-j
 
 # print("\nMatriks 1")
 # printMatriks(satu)
