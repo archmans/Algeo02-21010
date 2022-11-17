@@ -50,14 +50,17 @@ def EigenDariQR(matrix):
     return EigenVal, EigenVec
 
 
-# driver
-t = cv2.resize(cv2.imread("./test/wow/Sarah Wayne Callies0_2384.jpg", cv2.IMREAD_GRAYSCALE), (256, 256))
-print(t)
-print(t.shape)
-c, d = EigenDariQR(t)
-# print("\nvalue\n")
-# print(c)
-# print(len(c))
-print("\nvector\n")  
-print(d)
-print(d.shape)
+# # driver
+# t = cv2.resize(cv2.imread("./test/wow/Sarah Wayne Callies0_2384.jpg", cv2.IMREAD_GRAYSCALE), (256, 256))
+# print(t)
+# print(t.shape)
+# g = np.array(t)
+# print(np.linalg.eig(g)[0])
+
+# c, d = EigenDariQR(t)
+# # print("\nvalue\n")
+# # print(c)
+# # print(len(c))
+# print("\nvector\n")  
+# print(d)
+# print(d.shape)
