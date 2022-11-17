@@ -5,6 +5,7 @@ from covarian import *
 from step3EigenAlgo import *
 from Mean import *
 from AlgoritmaEigen import *
+import cv2 as cv2
 
 #mengambil himpunan gambar
 t = np.array(resize_image(get_image("./test/p"), (256, 256)))
@@ -16,6 +17,7 @@ print(t.shape)
 mean = Mean(t)
 print("\nMean :\n ")
 print(mean)
+print(mean.shape)
 
 #mencari selisih
 selisih = []
@@ -26,30 +28,29 @@ print("\nSelisih :\n")
 print(selisih)
 print(selisih.shape)
 
+selisihGabungan = concatAllImage(selisih)
+
 #mencari covarian
-cov = []
-for i in range(len(selisih)):
-    cov.append(matrix_covarian(selisih[i]))
-print("Covarian :\n")
-cov = np.array(cov)
+cov = matrix_covarian(selisihGabungan)
+print("\nCovarian :\n")
 print(cov)
 print(cov.shape)
 
 #mencari eigen
-eigen = []
-for i in range(len(cov)):
-    Val, Vec = EigenDariQR(cov[i])
-    eigen.append(Vec)
-eigen = np.array(eigen)
+EigenVal, EigenVec = EigenDariQR(cov)
 print("\nVector Eigen :\n")
-print(eigen)
-print(eigen.shape)
+print(EigenVec)
+print(EigenVec.shape)
 
 #mencari eigen face
 eigenFace = []
-for i in range(len(eigen)):
-    eigenFace.append(KaliMatriks(eigen[i], selisih[i]))
+for i in range(len(selisih)):
+    eigenFace.append(KaliMatriks(EigenVec, selisih[i]))
 eigenFace = np.array(eigenFace)
 print("\nEigen Face :\n")
-printMatriks(eigenFace)
+print(eigenFace)
 print(eigenFace.shape)
+for i in range(len(eigenFace)):
+    cv2.imshow('image',eigenFace[i])
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
