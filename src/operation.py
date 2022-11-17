@@ -27,14 +27,28 @@ def concat(matriksGambar1, matriksGambar2):
     matrikshasil = np.concatenate((matriksGambar1, matriksGambar2), axis=1)
     return matrikshasil
 
-# Driver
-satu = [[0 for i in range(3)] for j in range(3)]
-dua = [[0 for i in range(3)] for j in range(3)]
+def concatAllImage(himpunanGambar):
+    Con = []
+    for i in range(len(himpunanGambar)):
+        if i == 0:
+            Con = himpunanGambar[i]
+        else:
+            Con = concat(Con, himpunanGambar[i])
+    return Con
 
-for i in range(3):
-    for j in range(3):
-        satu[i][j] = i+j
-        dua[i][j] = i-j
+
+# # Driver
+# satu = [[0 for i in range(3)] for j in range(3)]
+# dua = [[0 for i in range(3)] for j in range(3)]
+
+# for i in range(3):
+#     for j in range(3):
+#         satu[i][j] = i+j
+#         dua[i][j] = i-j
+
+# selisih = [[[1,2,3],[4,5,6],[7,8,9]],[[9,8,7],[6,5,4],[3,2,1]],[[0,0,0],[0,0,0],[0,0,0]]]
+# a = concatAllImage(selisih)
+# print(a)
 
 # print("\nMatriks 1")
 # printMatriks(satu)
