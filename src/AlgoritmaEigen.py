@@ -51,7 +51,7 @@ def EigenDariQR(matrix):
 
 
 # # driver
-# t = cv2.resize(cv2.imread("./test/wow/Sarah Wayne Callies0_2384.jpg", cv2.IMREAD_GRAYSCALE), (256, 256))
+# t = 0000
 # print(t)
 # print(t.shape)
 # g = np.array(t)
