@@ -47,10 +47,27 @@ eigenFace = []
 for i in range(len(selisih)):
     eigenFace.append(KaliMatriks(EigenVec, selisih[i]))
 eigenFace = np.array(eigenFace)
-print("\nEigen Face :\n")
-print(eigenFace)
-print(eigenFace.shape)
+
+phototest=cv2.resize(cv2.imread("./test/wow/Adriana Lima48_169.jpg", cv2.IMREAD_GRAYSCALE), (256, 256))
+substest=KurangMatriks(phototest,mean)
+tempresult=KaliMatriks(EigenVec,substest)
+lock = []
 for i in range(len(eigenFace)):
-    cv2.imshow('image',eigenFace[i])
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
+    eigenFace[i]=eigenFace[i]-tempresult
+    lock.append(np.linalg.norm(eigenFace[i]))
+temp = np.empty((256,256))
+min=lock[0]
+temp=eigenFace[0]
+target = 0
+for i in range(len(lock)):
+    if min>lock[i]:
+        min=lock[i]
+        temp=eigenFace[i]
+        target=i
+
+print("\nEigen Face :\n")
+print(temp)
+print(temp.shape)
+cv2.imshow('image',t[target])
+cv2.waitKey(0)
+cv2.destroyAllWindows()
