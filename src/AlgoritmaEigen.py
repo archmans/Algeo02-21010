@@ -33,7 +33,7 @@ def DekomposisiQR(matrix):
             l = Q[:, i]
             R[i, j] = l @ k
             k = k - R[i, j] * l
-        norm = np.linalg.norm(k)
+        norm = normalizedArray(k)
         Q[:, j] = k / norm
         R[j, j] = norm
     return Q, R
@@ -41,7 +41,7 @@ def DekomposisiQR(matrix):
 def EigenDariQR(matrix):
     PQ = np.eye(matrix.shape[0])
     copy=matrix.copy()
-    for i in range(1):
+    for i in range(5):
             Q,R = DekomposisiQR(copy)
             PQ = PQ @ Q;
             copy = R @ Q;
