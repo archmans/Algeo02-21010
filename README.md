@@ -8,8 +8,6 @@
 * [Screenshots](#screenshots)
 * [Setup](#setup)
 * [Project Status](#project-status)
-* [Room for Improvement](#room-for-improvement)
-* [Acknowledgements](#acknowledgements)
 * [Contact](#contact)
 <!-- * [License](#license) -->
 
@@ -25,7 +23,7 @@ Application of Eigen and EigenFace Values ​​in Face Recognition is a project
 Kita dapat mendapatkan persen kemiripan image test dengan dataset
 
 ## Screenshots
-![Example screenshot](./img/screenshot.png)
+![messageImage_1669134044885](https://user-images.githubusercontent.com/110584940/203371937-a139dca3-8820-4c51-8cf5-3add81c0d7fd.jpg)
 
 ## Setup
 Download zip -> run 'GUI.py'
@@ -36,10 +34,8 @@ Project is: _complete_
 
 
 ## Contact
-''
 Created by :
 [Muhamad Salman Hakim Alfarisi (13521010)](https://www.flynerd.pl/)
 [Haikal Ardzi Shofiyyurrohman (13521012)](https://www.flynerd.pl/)
 [Agsha Athalla Nurkareem (13521027)](https://www.flynerd.pl/)
 - feel free to contact us!
-''
