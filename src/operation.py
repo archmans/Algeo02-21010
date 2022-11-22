@@ -27,6 +27,10 @@ def concat(matriksGambar1, matriksGambar2):
     matrikshasil = np.concatenate((matriksGambar1, matriksGambar2), axis=1)
     return matrikshasil
 
+def concatBawah(matriksGambar1, matriksGambar2):
+    matrikshasil = np.concatenate((matriksGambar1, matriksGambar2), axis=0)
+    return matrikshasil
+
 def concatAllImage(himpunanGambar):
     Con = []
     for i in range(len(himpunanGambar)):
@@ -36,6 +40,47 @@ def concatAllImage(himpunanGambar):
             Con = concat(Con, himpunanGambar[i])
     return Con
 
+def concatAllImageBawah(himpunanGambar):
+    Con = []
+    for i in range(len(himpunanGambar)):
+        if i == 0:
+            Con = himpunanGambar[i]
+        else:
+            Con = concatBawah(Con, himpunanGambar[i])
+    return Con
+
+def flattenImage(himpunanGambar):
+    Con = []
+    for i in range(len(himpunanGambar)):
+        if i == 0:
+            Con = np.ravel(himpunanGambar[i])
+        else:
+            a = np.ravel(himpunanGambar[i])
+            Con = np.r_[Con,a] 
+    Con = np.reshape(Con,(len(himpunanGambar),256*256))
+    return Con
+
+def getMinIndex(list):
+    min = list[0]
+    index = 0
+    for i in range(len(list)):
+        if list[i] < min:
+            min = list[i]
+            index = i
+    return (index, min)
+
+def normalized(matrix):
+    jumlahKuadrat = 0
+    for i in range(len(matrix)):
+        for j in range(len(matrix[0])):
+            jumlahKuadrat += matrix[i][j]**2
+    return jumlahKuadrat**(1/2)
+
+def normalizedArray(array):
+    jumlahKuadrat = 0
+    for i in range(len(array)):
+        jumlahKuadrat += array[i]**2
+    return jumlahKuadrat**(1/2)
 
 # # Driver
 # satu = [[0 for i in range(3)] for j in range(3)]
