@@ -2,7 +2,7 @@ from operation import *
 import numpy as np
 from img_processing import *
 from covarian import *
-from mean import *
+from Mean import *
 from AlgoritmaEigen import *
 import cv2 as cv2
 

@@ -1,8 +1,6 @@
 import numpy as np
 import cv2
 
-# matriks[0] kolom
-
 def JumlahMatriks (matriksGambar1, matriksGambar2):
     return np.add(matriksGambar1, matriksGambar2)
 
