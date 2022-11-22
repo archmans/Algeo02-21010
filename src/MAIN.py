@@ -8,7 +8,7 @@ from AlgoritmaEigen import *
 import cv2 as cv2
 
 #mengambil himpunan gambar
-t = np.array(resize_image(get_image("./test/p"), (256, 256)))
+t = np.array(resize_image(get_image("./test/datasettes"), (256, 256)))
 print("\nHimpunan Gambar :\n")
 print(t)
 print(t.shape)
@@ -29,6 +29,10 @@ print(selisih)
 print(selisih.shape)
 
 selisihGabungan = concatAllImage(selisih)
+selisihGabungan = np.array(selisihGabungan)
+print("\nSelisih Gabungan :\n")
+print(selisihGabungan)
+print(selisihGabungan.shape)
 
 #mencari covarian
 cov = matrix_covarian(selisihGabungan)
@@ -48,13 +52,13 @@ for i in range(len(selisih)):
     eigenFace.append(KaliMatriks(EigenVec, selisih[i]))
 eigenFace = np.array(eigenFace)
 
-phototest=cv2.resize(cv2.imread("./test/wow/Adriana Lima48_169.jpg", cv2.IMREAD_GRAYSCALE), (256, 256))
+phototest=cv2.resize(cv2.imread("./test/wow/taylor.jpg", cv2.IMREAD_GRAYSCALE), (256, 256))
 substest=KurangMatriks(phototest,mean)
 tempresult=KaliMatriks(EigenVec,substest)
 lock = []
 for i in range(len(eigenFace)):
     eigenFace[i]=eigenFace[i]-tempresult
-    lock.append(np.linalg.norm(eigenFace[i]))
+    lock.append(normalized(eigenFace[i]))
 temp = np.empty((256,256))
 min=lock[0]
 temp=eigenFace[0]
