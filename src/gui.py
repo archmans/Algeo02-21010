@@ -3,7 +3,7 @@ import customtkinter as ctk
 from tkinter import filedialog
 from PIL import ImageTk, Image
 import PIL as pill
-from main import *
+from MAIN import *
 import cv2 as cv2
 import os
 import timeit
