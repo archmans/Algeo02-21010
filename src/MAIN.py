@@ -63,6 +63,7 @@ def image_processing(image_path, mean, eigenFace, EigenVec, t):
         lock.append(normalized(eigenFace[i]))
     temp = np.empty((256,256))
     min=lock[0]
+    max = lock[0]
     temp=eigenFace[0]
     target = 0
     for i in range(len(lock)):
@@ -70,8 +71,19 @@ def image_processing(image_path, mean, eigenFace, EigenVec, t):
             min=lock[i]
             temp=eigenFace[i]
             target=i
+        if max<lock[i]:
+            max=lock[i]
+
+    print("minimum = ",min)
+    print("maximum = ",max)
+    a = max-min
+    print("a = ",a)
+    persentage = (a/max)*100
+    persentage = round(persentage, 2)
+    treshold = 0.8 * max
+    print("persentase = ",persentage,"%")
 
     print("\nEigen Face :\n")
     print(temp)
     print(temp.shape)
-    return t[target]
+    return t[target], persentage, treshold, min
