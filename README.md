@@ -35,6 +35,6 @@ Project is: _complete_
 
 ## Contact
 Created by :
-[Muhamad Salman Hakim Alfarisi (13521010)][(https://github.com/archmans)]
+[Muhamad Salman Hakim Alfarisi (13521010)](https://github.com/archmans)
 [Haikal Ardzi Shofiyyurrohman (13521012)](https://www.flynerd.pl/)
 [Agsha Athalla Nurkareem (13521027)](https://www.flynerd.pl/)
