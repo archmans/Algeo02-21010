@@ -1,6 +1,5 @@
 # Application of Eigen Values ​​and EigenFace on Face Recognition
-> Outline a brief description of your project.
-> Live demo [_here_](https://www.youtube.com). <!-- If you have the project hosted somewhere, include the link here. -->
+> Proyek ini merupakan salah satu pengaplikasian nilai eigen dan vektor eigen yang dapat kita gunakan untuk mengimplementasikan pengenalan wajah 
 
 ## Table of Contents
 * [General Info](#general-information)
