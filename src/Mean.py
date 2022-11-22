@@ -3,8 +3,13 @@ import cv2
 import numpy as np
 from img_processing import *
 def Mean (listMatriksGambar):
-    matriksHasil = np.mean(listMatriksGambar, axis=0).astype(int)
-    return matriksHasil
+    # matriksHasil = np.zeros((0, 0))
+    matriksHasil = listMatriksGambar[0]
+    for i in range(1, (len(listMatriksGambar))):
+        matriksHasil = (matriksHasil+listMatriksGambar[i])
+    print(len(listMatriksGambar))
+    return matriksHasil/len(listMatriksGambar)
+
 
 # t = resize_image(get_image("./test/wow"), (256, 256))
 # a = Mean(t)
