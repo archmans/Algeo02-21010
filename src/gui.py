@@ -2,7 +2,7 @@ from tkinter import *
 import customtkinter as ctk
 from tkinter import filedialog
 from PIL import ImageTk, Image
-import PIL as upil
+import PIL as pill
 from main import *
 import cv2 as cv2
 import os
@@ -37,16 +37,22 @@ def open_image():
 def main():
   start = timeit.default_timer()
   eigenFace, mean, eigenVec, himpunan = dataset_processing(get_var_folder.get())
-  hasil = image_processing(get_var_image.get(), mean, eigenFace, eigenVec, himpunan)
-
+  hasil, persentase, treshold, min = image_processing(get_var_image.get(), mean, eigenFace, eigenVec, himpunan)
+  if  min<treshold:
+    img = pill.Image.fromarray(hasil)
+    img = img.resize((256, 256))
+    img = ImageTk.PhotoImage(img)
+    my_label = Label(window, image = img)
+    my_label.image = img
+    my_label.place(x = 630, y = 145)
+    persentage_label = Label(window, text = "Persentase : "+str(persentase)+"%", font = ("Arial", 11))
+    persentage_label.place(x = 630, y = 460)
+  else:
+    error_tabel = Label(window, text = "Tidak ada wajah yang cocok", font = ("Arial", 11))
+    error_tabel.place(x = 600, y = 160)
   stop = timeit.default_timer()
   Time = round(stop - start, 3)
-  img = upil.Image.fromarray(hasil)
-  img = img.resize((256, 256))
-  img = ImageTk.PhotoImage(img)
-  my_label = Label(window, image = img)
-  my_label.image = img
-  my_label.place(x = 630, y = 145)
+
 
   time_label = Label(window, text = "Execution time: " + str(Time) + " s", font = ("Arial", 11))
   time_label.place(x = 630, y = 420)
